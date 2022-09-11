@@ -1,0 +1,86 @@
+// 既定値を上書きするには、このファイル内にキー バインドを挿入します
+[
+  // tabでサジェストを上下
+  {
+    "key": "tab",
+    "command": "selectNextSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "shift+tab",
+    "command": "selectPrevSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+
+  // ファイル新規作成
+  {
+    "key": "n",
+    "command": "explorer.newFile",
+    "when": "fileExplorerFocus"
+  },
+  // フォルダを新規作成
+  {
+    "key": "shift+n",
+    "command": "explorer.newFolder",
+    "when": "fileExplorerFocus"
+  },
+  //* explorerをすべて折りたたむ
+  {
+    "key": "cmd+\\",
+    "command": "workbench.files.action.collapseExplorerFolders",
+    "when": "fileExplorerFocus"
+  },
+  //! [Mac] cmd to ctrl */
+  // 保存
+  {
+    "key": "ctrl+s",
+    "command": "workbench.action.files.save"
+  },
+  // タブを閉じる
+  {
+    "key": "ctrl+w",
+    "command": "workbench.action.closeWindow",
+    "when": "!editorIsOpen && !multipleEditorGroups"
+  },
+  // エディターフォーカス
+  {
+    "key": "ctrl+1",
+    "command": "workbench.action.focusFirstEditorGroup"
+  },
+  {
+    "key": "ctrl+2",
+    "command": "workbench.action.focusSecondEditorGroup"
+  },
+  {
+    "key": "ctrl+3",
+    "command": "workbench.action.focusThirdEditorGroup"
+  },
+  // クイックオープン
+  {
+    "key": "space p",
+    "command": "workbench.action.quickOpen",
+    "when": "!editorIsOpen || inWelcome"
+  },
+  // コマンドパレット
+  {
+    "key": "space shift+p",
+    "command": "workbench.action.showCommands",
+    "when": "!editorIsOpen || inWelcome"
+  },
+  // エクスプローラー
+  {
+    "key": "space e",
+    "command": "workbench.view.explorer",
+    "when": "!editorIsOpen || inWelcome"
+  },
+  {
+    "key": "ctrl+r",
+    "command": "workbench.action.reloadWindow",
+    "when": "isDevelopment"
+  },
+  {
+    "key": "cmd+r",
+    "command": "-workbench.action.reloadWindow",
+    "when": "isDevelopment"
+  }
+]
