@@ -59,13 +59,13 @@
   {
     "key": "space p",
     "command": "workbench.action.quickOpen",
-    "when": "!editorIsOpen || inWelcome"
+    "when": "!editorIsOpen || inWelcome || !editorFocus"
   },
   // コマンドパレット
   {
     "key": "space shift+p",
     "command": "workbench.action.showCommands",
-    "when": "!editorIsOpen || inWelcome"
+    "when": "!editorIsOpen || inWelcome || !editorFocus"
   },
   // エクスプローラー
   {
