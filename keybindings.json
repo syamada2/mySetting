@@ -12,25 +12,33 @@
     "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
   },
 
+  /* Explorer */
   // ファイル新規作成
   {
     "key": "n",
     "command": "explorer.newFile",
-    "when": "fileExplorerFocus"
+    "when": "fileExplorerFocus && !inputFocus"
   },
   // フォルダを新規作成
   {
     "key": "shift+n",
     "command": "explorer.newFolder",
-    "when": "fileExplorerFocus"
+    "when": "fileExplorerFocus && !inputFocus"
   },
-  //* explorerをすべて折りたたむ
+  // すべて折りたたむ
   {
-    "key": "cmd+\\",
+    "key": "\\",
     "command": "workbench.files.action.collapseExplorerFolders",
-    "when": "fileExplorerFocus"
+    "when": "fileExplorerFocus || !inputFocus"
   },
-  //! [Mac] cmd to ctrl */
+  // エディターすべて閉じる
+  {
+    "key": "`",
+    "command": "workbench.action.closeAllGroups",
+    "when": "fileExplorerFocus || !inputFocus"
+  },
+
+  /* [Mac] cmd to ctrl */
   // 保存
   {
     "key": "ctrl+s",
@@ -55,32 +63,24 @@
     "key": "ctrl+3",
     "command": "workbench.action.focusThirdEditorGroup"
   },
+
+  /* not editor open */
   // クイックオープン
   {
-    "key": "space p",
+    "key": "p",
     "command": "workbench.action.quickOpen",
-    "when": "!editorIsOpen || inWelcome || !editorFocus"
+    "when": "!editorIsOpen || inWelcome && !inputFocus"
   },
   // コマンドパレット
   {
-    "key": "space shift+p",
+    "key": "shift+p",
     "command": "workbench.action.showCommands",
-    "when": "!editorIsOpen || inWelcome || !editorFocus"
+    "when": "!editorIsOpen || inWelcome && !inputFocus"
   },
   // エクスプローラー
   {
-    "key": "space e",
+    "key": "e",
     "command": "workbench.view.explorer",
-    "when": "!editorIsOpen || inWelcome"
-  },
-  {
-    "key": "ctrl+r",
-    "command": "workbench.action.reloadWindow",
-    "when": "isDevelopment"
-  },
-  {
-    "key": "cmd+r",
-    "command": "-workbench.action.reloadWindow",
-    "when": "isDevelopment"
+    "when": "!editorIsOpen || inWelcome && !inputFocus"
   }
 ]

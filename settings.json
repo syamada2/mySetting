@@ -2,24 +2,24 @@
   "customizeUI.stylesheet": {
     // Vim Status bar color
     // NORMAL MODE
-    "#vscodevim\\.vim\\.primary[aria-label=\"-- NORMAL --\"]": "color: #002b2c !important; background-color: #0071aa !important; font-weight: bold;",
+    "#vscodevim\\.vim\\.primary[aria-label^=\"-- NORMAL\"]": "color: #002b2c !important; background-color: #0071aa !important; font-weight: bold;",
     // INSERT MODE
-    "#vscodevim\\.vim\\.primary[aria-label=\"-- INSERT --\"]": "color: #002b2c !important; background-color: #687d24 !important; font-weight: bold;",
+    "#vscodevim\\.vim\\.primary[aria-label^=\"-- INSERT\"]": "color: #002b2c !important; background-color: #849a28 !important; font-weight: bold;",
     // VISUAL MODE
-    "#vscodevim\\.vim\\.primary[aria-label^=\"-- VISUAL\"]": "color: #002b2c !important; background-color: #82345a !important font-weight: bold;",
+    "#vscodevim\\.vim\\.primary[aria-label^=\"-- VISUAL\"]": "color: #002b2c !important; background-color: #a73d71 !important; font-weight: bold;",
     "#vscodevim\\.vim\\.primary[aria-label^=\":\"]": "background-color: #7f8490 !important:",
 
     // git status
-    "#status\\.scm\\.0.statusbar-item.left": "background-color: #75807d !important; color: #053038 !important",
+    "#status\\.scm\\.0.statusbar-item.left": "background-color: #75807d !important; color: #053038 !important"
 
     // for inline
-    ".monaco-workbench .part>.composite.title": "background-color: #16353f !important",
-    "body.inline-title-bar:not(.activity-bar-at-bottom) .activity-bar-placeholder": "background-color: #16353f !important;",
-    "body.inline-title-bar div.dragging-area-left-padding": "background-color: #16353f !important",
-    "body.inline-title-bar div.dragging-area-top": "background-color: #16353f !important",
-    ".monaco-workbench .part.editor>.content .editor-group-container>.title .editor-actions": "background-color: #16353f !important"
+    // ".monaco-workbench .part>.composite.title": "background-color: #16353f !important",
+    // "body.inline-title-bar:not(.activity-bar-at-bottom) .activity-bar-placeholder": "background-color: #16353f !important;",
+    // "body.inline-title-bar div.dragging-area-left-padding": "background-color: #16353f !important",
+    // "body.inline-title-bar div.dragging-area-top": "background-color: #16353f !important",
+    // ".monaco-workbench .part.editor>.content .editor-group-container>.title .editor-actions": "background-color: #16353f !important"
   },
-  "customizeUI.titleBar": "inline", // macOS のみ
+  // "customizeUI.titleBar": "inline", // macOS のみ
 
   /** vim関連設定 */
 
@@ -168,67 +168,65 @@
 
   "workbench.colorCustomizations": {
     // タイトルバー
-    "titleBar.activeBackground": "#ff0000",
-    "[Default Dark+]": {
-      // エディター
-      // "editor.background": "#0d1117",
-      "editor.background": "#253a40",
-      "editorGroup.border": "#000000",
-      "editor.lineHighlightBackground": "#002d39",
-      // ガーター
-      "editorGutter.background": "#002d39",
-
-      // タブ
-      "tab.activeBackground": "#0d1117",
-      "tab.activeBorder": "#0d1117",
-      "tab.activeBorderTop": "#f78166",
-      "tab.activeForeground": "#c9d1d9",
-      "tab.border": "#30363d",
-      "tab.hoverBackground": "#0d1117",
-      "tab.inactiveBackground": "#010409",
-      "tab.inactiveForeground": "#8b949e",
-      "tab.unfocusedActiveBorder": "#0d1117",
-      "tab.unfocusedActiveBorderTop": "#30363d",
-      "tab.unfocusedHoverBackground": "#6e76811a",
-      "tab.lastPinnedBorder": "#2aa19844",
-      // ステータスバー
-      "statusBar.background": "#00252f",
-      "statusBar.foreground": "#719ddc",
-      "statusBarItem.remoteBackground": "#719ddc",
-      // アクティビティーバー
-      "activityBar.activeBorder": "#f78166",
-      "activityBar.background": "#00252f",
-      "activityBar.foreground": "#c9d1d9",
-      "activityBar.inactiveForeground": "#8b949e",
-      "activityBarBadge.background": "#1f6feb",
-      "activityBarBadge.foreground": "#f0f6fc",
-      // サイドバー
-      "sideBar.border": "#30363d",
-      "sideBar.foreground": "#c9d1d9",
-      "sideBarSectionHeader.background": "#010409",
-      "sideBarSectionHeader.border": "#30363d",
-      "sideBarSectionHeader.foreground": "#c9d1d9",
-      "sideBarTitle.foreground": "#c9d1d9",
-      "sideBar.background": "#010409",
-      "tree.indentGuidesStroke": "#21262d",
-      // ターミナル
-      "terminal.ansiBlack": "#073642",
-      "terminal.ansiBlue": "#268bd2",
-      "terminal.ansiBrightBlack": "#002b36",
-      "terminal.ansiBrightBlue": "#839496",
-      "terminal.ansiBrightCyan": "#93a1a1",
-      "terminal.ansiBrightGreen": "#586e75",
-      "terminal.ansiBrightMagenta": "#6c71c4",
-      "terminal.ansiBrightRed": "#cb4b16",
-      "terminal.ansiBrightWhite": "#fdf6e3",
-      "terminal.ansiBrightYellow": "#657b83",
-      "terminal.ansiCyan": "#2aa198",
-      "terminal.ansiGreen": "#859900",
-      "terminal.ansiMagenta": "#d33682",
-      "terminal.ansiRed": "#dc322f",
-      "terminal.ansiWhite": "#eee8d5",
-      "terminal.ansiYellow": "#b58900"
-    }
+    // "[Default Dark+]": {
+    //   // エディター
+    //   // "editor.background": "#0d1117",
+    //   "editor.background": "#253a40",
+    //   "editorGroup.border": "#000000",
+    //   "editor.lineHighlightBackground": "#002d39",
+    //   // ガーター
+    //   "editorGutter.background": "#002d39",
+    //   // タブ
+    //   "tab.activeBackground": "#0d1117",
+    //   "tab.activeBorder": "#0d1117",
+    //   "tab.activeBorderTop": "#f78166",
+    //   "tab.activeForeground": "#c9d1d9",
+    //   "tab.border": "#30363d",
+    //   "tab.hoverBackground": "#0d1117",
+    //   "tab.inactiveBackground": "#010409",
+    //   "tab.inactiveForeground": "#8b949e",
+    //   "tab.unfocusedActiveBorder": "#0d1117",
+    //   "tab.unfocusedActiveBorderTop": "#30363d",
+    //   "tab.unfocusedHoverBackground": "#6e76811a",
+    //   "tab.lastPinnedBorder": "#2aa19844",
+    //   // ステータスバー
+    //   "statusBar.background": "#00252f",
+    //   "statusBar.foreground": "#719ddc",
+    //   "statusBarItem.remoteBackground": "#719ddc",
+    //   // アクティビティーバー
+    //   "activityBar.activeBorder": "#f78166",
+    //   "activityBar.background": "#00252f",
+    //   "activityBar.foreground": "#c9d1d9",
+    //   "activityBar.inactiveForeground": "#8b949e",
+    //   "activityBarBadge.background": "#1f6feb",
+    //   "activityBarBadge.foreground": "#f0f6fc",
+    //   // サイドバー
+    //   "sideBar.border": "#30363d",
+    //   "sideBar.foreground": "#c9d1d9",
+    //   "sideBarSectionHeader.background": "#010409",
+    //   "sideBarSectionHeader.border": "#30363d",
+    //   "sideBarSectionHeader.foreground": "#c9d1d9",
+    //   "sideBarTitle.foreground": "#c9d1d9",
+    //   "sideBar.background": "#010409",
+    //   "tree.indentGuidesStroke": "#21262d",
+    //   // ターミナル
+    //   "terminal.ansiBlack": "#073642",
+    //   "terminal.ansiBlue": "#268bd2",
+    //   "terminal.ansiBrightBlack": "#002b36",
+    //   "terminal.ansiBrightBlue": "#839496",
+    //   "terminal.ansiBrightCyan": "#93a1a1",
+    //   "terminal.ansiBrightGreen": "#586e75",
+    //   "terminal.ansiBrightMagenta": "#6c71c4",
+    //   "terminal.ansiBrightRed": "#cb4b16",
+    //   "terminal.ansiBrightWhite": "#fdf6e3",
+    //   "terminal.ansiBrightYellow": "#657b83",
+    //   "terminal.ansiCyan": "#2aa198",
+    //   "terminal.ansiGreen": "#859900",
+    //   "terminal.ansiMagenta": "#d33682",
+    //   "terminal.ansiRed": "#dc322f",
+    //   "terminal.ansiWhite": "#eee8d5",
+    //   "terminal.ansiYellow": "#b58900"
+    // }
   },
 
   /* フォーマッター */
@@ -277,6 +275,5 @@
   },
   // VSCodeの音量
   "audioCues.volume": 0,
-  "workbench.colorTheme": "Bourbon",
-  "window.titleBarStyle": "native"
+  "workbench.colorTheme": "Bourbon"
 }
