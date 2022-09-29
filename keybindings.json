@@ -12,33 +12,32 @@
     "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
   },
 
-  /* Explorer */
+  //* Explorer */
   // ファイル新規作成
   {
     "key": "n",
     "command": "explorer.newFile",
-    "when": "fileExplorerFocus && !inputFocus"
+    "when": "filesExplorerFocus && !inputFocus"
   },
   // フォルダを新規作成
   {
     "key": "shift+n",
     "command": "explorer.newFolder",
-    "when": "fileExplorerFocus && !inputFocus"
+    "when": "filesExplorerFocus && !inputFocus"
   },
   // すべて折りたたむ
   {
     "key": "\\",
     "command": "workbench.files.action.collapseExplorerFolders",
-    "when": "fileExplorerFocus || !inputFocus"
+    "when": "filesExplorerFocus && !inputFocus"
   },
   // エディターすべて閉じる
   {
     "key": "`",
     "command": "workbench.action.closeAllGroups",
-    "when": "fileExplorerFocus || !inputFocus"
+    "when": "filesExplorerFocus && !inputFocus"
   },
 
-  /* [Mac] cmd to ctrl */
   // 保存
   {
     "key": "ctrl+s",
@@ -50,6 +49,7 @@
     "command": "workbench.action.closeWindow",
     "when": "!editorIsOpen && !multipleEditorGroups"
   },
+
   // エディターフォーカス
   {
     "key": "ctrl+1",
@@ -64,23 +64,29 @@
     "command": "workbench.action.focusThirdEditorGroup"
   },
 
-  /* not editor open */
+  //* not input focus */
   // クイックオープン
   {
     "key": "p",
     "command": "workbench.action.quickOpen",
-    "when": "!editorIsOpen || inWelcome && !inputFocus"
+    "when": "!inputFocus"
   },
   // コマンドパレット
   {
     "key": "shift+p",
     "command": "workbench.action.showCommands",
-    "when": "!editorIsOpen || inWelcome && !inputFocus"
+    "when": "!inputFocus"
   },
   // エクスプローラー
   {
     "key": "e",
     "command": "workbench.view.explorer",
-    "when": "!editorIsOpen || inWelcome && !inputFocus"
+    "when": "!inputFocus"
+  },
+  {
+    "key": "shift+enter",
+    "command": "type",
+    "args": { "text": "<br>\n" },
+    "when": "editorTextFocus && editorLangId == 'markdown'"
   }
 ]
