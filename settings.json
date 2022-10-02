@@ -3,17 +3,17 @@
   "customizeUI.stylesheet": {
     // Vim Status bar color
     // NORMAL MODE
-    // "#vscodevim\\.vim\\.primary[aria-label^=\"-- NORMAL\"]": "color: #002b2c !important; background-color: #0071aa !important; font-weight: bold;",
-    "#vscodevim\\.vim\\.primary[aria-label^=\"-- NORMAL --\"]": "width: 140px; background: linear-gradient(-135deg, transparent 35px, #0071aa 0) top right, linear-gradient(-45deg, transparent 35px, #0071aa 0) bottom right; background-size: 100% 50%; background-repeat: no-repeat; color: #002b2c; line-height: 30px; font-weight: bold;",
+    "#vscodevim\\.vim\\.primary[aria-label^=\"-- NORMAL --\"]": "width: 145px; background: linear-gradient(-135deg, transparent 35px, #0071aa 0) top right, linear-gradient(-45deg, transparent 35px, #0071aa 0) bottom right; background-size: 100% 50%; background-repeat: no-repeat; color: #002b2c; line-height: 30px; font-weight: bold;",
     "#vscodevim\\.vim\\.primary[aria-label^=\"-- NORMAL --  MULTI CURSOR\"]": "width: 250px; background: linear-gradient(-135deg, transparent 35px, #0071aa 0) top right, linear-gradient(-45deg, transparent 35px, #0071aa 0) bottom right; background-size: 100% 50%; background-repeat: no-repeat; color: #002b2c; line-height: 30px; font-weight: bold;",
     // INSERT MODE
-    // "#vscodevim\\.vim\\.primary[aria-label^=\"-- INSERT\"]": "color: #002b2c !important; background-color: #849a28 !important; font-weight: bold;",
-    "#vscodevim\\.vim\\.primary[aria-label^=\"-- INSERT --\"]": "width: 140px; background: linear-gradient(-135deg, transparent 35px, #849a28 0) top right, linear-gradient(-45deg, transparent 35px, #849a28 0) bottom right; background-size: 100% 50%; background-repeat: no-repeat; color: #002b2c; line-height: 30px; font-weight: bold;",
+    "#vscodevim\\.vim\\.primary[aria-label^=\"-- INSERT --\"]": "width: 145px; background: linear-gradient(-135deg, transparent 35px, #849a28 0) top right, linear-gradient(-45deg, transparent 35px, #849a28 0) bottom right; background-size: 100% 50%; background-repeat: no-repeat; color: #002b2c; line-height: 30px; font-weight: bold;",
     "#vscodevim\\.vim\\.primary[aria-label^=\"-- INSERT --  MULTI CURSOR\"]": "width: 250px; background: linear-gradient(-135deg, transparent 35px, #849a28 0) top right, linear-gradient( -45deg, transparent 35px, #849a28 0) bottom right; background-size:  100% 50%; background-repeat: no-repeat; color: #002b2c; line-height: 30px;  font-weight: bold;",
     // VISUAL MODE
-    "#vscodevim\\.vim\\.primary[aria-label^=\"-- VISUAL\"]": "color: #002b2c !important; background-color: #a73d71 !important; font-weight: bold;",
-    // other mode
-    "#vscodevim\\.vim\\.primary[aria-label^=\":\"]": "background-color: #7f8490 !important:",
+    "#vscodevim\\.vim\\.primary[aria-label^=\"-- VISUAL --\"]": "width: 145px; background: linear-gradient(-135deg, transparent 35px, #a73d71 0) top right, linear-gradient(-45deg, transparent 35px, #a73d71 0) bottom right; background-size: 100% 50%; background-repeat: no-repeat; color: #002b2c; line-height: 30px; font-weight: bold;",
+    "#vscodevim\\.vim\\.primary[aria-label^=\"-- VISUAL LINE\"]": "width: 170px; background: linear-gradient(-135deg, transparent 35px, #a73d71 0) top right, linear-gradient( -45deg, transparent 35px, #a73d71 0) bottom right; background-size:  100% 50%; background-repeat: no-repeat; color: #002b2c; line-height: 30px;  font-weight: bold;",
+    "#vscodevim\\.vim\\.primary[aria-label^=\"-- VISUAL BLOCK\"]": "width: 180px; background: linear-gradient(-135deg, transparent 35px, #a73d71 0) top right, linear-gradient( -45deg, transparent 35px, #a73d71 0) bottom right; background-size:  100% 50%; background-repeat: no-repeat; color: #002b2c; line-height: 30px;  font-weight: bold;",
+    // REPLACE
+    "#vscodevim\\.vim\\.primary[aria-label^=\"-- REPLACE --\"]": "width: 145px; background: linear-gradient(-135deg, transparent 35px, #fd7e00 0) top right, linear-gradient(-45deg, transparent 35px, #fd7e00 0) bottom right; background-size: 100% 50%; background-repeat: no-repeat; color: #002b2c; line-height: 30px; font-weight: bold;",
 
     // git status
     "#status\\.scm\\.0.statusbar-item.left": "background-color: #75807d !important; color: #053038 !important"
@@ -27,7 +27,6 @@
   },
 
   /** vim関連設定 */
-
   //* insertモードのキーバインド
   "vim.insertModeKeyBindingsNonRecursive": [
     { "before": ["j", "j"], "after": ["<Esc>"] },
@@ -91,15 +90,6 @@
       "before": ["<leader>", "\\"],
       "commands": ["editor.action.goToTypeDefinition"]
     },
-    // ファイルエクスプローラーのフォーカス
-    { "before": ["<leader>", "e"], "commands": ["workbench.view.explorer"] },
-    // クイックオープン
-    { "before": ["<leader>", "p"], "commands": ["workbench.action.quickOpen"] },
-    // コマンドパレット
-    {
-      "before": ["<leader>", "P"],
-      "commands": ["workbench.action.showCommands"]
-    },
     // ブックマークのトグル
     { "before": ["<leader>", "b"], "commands": ["Bookmarks.toggle"] },
     // 定義プレビューホバーの表示
@@ -119,11 +109,6 @@
     },
     // クイックフィックス
     { "before": ["<leader>", "."], "commands": ["editor.action.quickFix"] },
-    // すべてのタブを閉じる
-    {
-      "before": ["<leader>", "`", "`"],
-      "commands": ["workbench.action.closeAllEditors"]
-    },
     // コメントアウト トグル
     { "before": ["<leader>", "/"], "commands": ["editor.action.commentLine"] },
     // 標準pasteを使用
@@ -131,12 +116,10 @@
       "before": ["<leader>", "v"],
       "commands": ["editor.action.clipboardPasteAction"]
     },
-    // タブピッカー
+    // レジスタ一覧表示
     {
-      "before": ["<leader>", "t"],
-      "commands": [
-        "workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup"
-      ]
+      "before": ["<leader>", "r"],
+      "commands": [":reg"]
     }
   ],
 

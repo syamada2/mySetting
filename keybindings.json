@@ -1,5 +1,15 @@
-// 既定値を上書きするには、このファイル内にキー バインドを挿入します
 [
+  //* General
+  // 保存
+  {
+    "key": "ctrl+s",
+    "command": "workbench.action.files.save"
+  },
+  // タブを閉じる
+  {
+    "key": "ctrl+w",
+    "command": "workbench.action.closeActiveEditor"
+  },
   // tabでサジェストを上下
   {
     "key": "tab",
@@ -11,8 +21,23 @@
     "command": "selectPrevSuggestion",
     "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
   },
+  // クイックオープン
+  {
+    "key": "ctrl+p",
+    "command": "workbench.action.quickOpen"
+  },
+  // コマンドパレット
+  {
+    "key": "ctrl+shift+p",
+    "command": "workbench.action.showCommands"
+  },
+  // エクスプローラー
+  {
+    "key": "ctrl+e",
+    "command": "workbench.view.explorer"
+  },
 
-  //* Explorer */
+  //* Explorer
   // ファイル新規作成
   {
     "key": "n",
@@ -38,18 +63,7 @@
     "when": "filesExplorerFocus && !inputFocus"
   },
 
-  // 保存
-  {
-    "key": "ctrl+s",
-    "command": "workbench.action.files.save"
-  },
-  // タブを閉じる
-  {
-    "key": "ctrl+w",
-    "command": "workbench.action.closeWindow",
-    "when": "!editorIsOpen && !multipleEditorGroups"
-  },
-
+  //* Editor
   // エディターフォーカス
   {
     "key": "ctrl+1",
@@ -64,29 +78,21 @@
     "command": "workbench.action.focusThirdEditorGroup"
   },
 
-  //* not input focus */
-  // クイックオープン
-  {
-    "key": "p",
-    "command": "workbench.action.quickOpen",
-    "when": "!inputFocus"
-  },
-  // コマンドパレット
-  {
-    "key": "shift+p",
-    "command": "workbench.action.showCommands",
-    "when": "!inputFocus"
-  },
-  // エクスプローラー
-  {
-    "key": "e",
-    "command": "workbench.view.explorer",
-    "when": "!inputFocus"
-  },
+  //* Markdown
   {
     "key": "shift+enter",
     "command": "type",
     "args": { "text": "<br>\n" },
     "when": "editorTextFocus && editorLangId == 'markdown'"
+  },
+
+  //! Removed key
+  {
+    "key": "ctrl+w",
+    "command": "-workbench.action.switchWindow"
+  },
+  {
+    "key": "cmd+w",
+    "command": "-workbench.action.closeActiveEditor"
   }
 ]
