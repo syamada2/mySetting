@@ -1,80 +1,39 @@
 {
-  //* 詳細カスタム */
-  "customizeUI.stylesheet": {
-    // Vim Status bar color
-    // NORMAL MODE
-    "#vscodevim\\.vim\\.primary[aria-label^=\"-- NORMAL --\"]": "width: 145px; background: linear-gradient(-135deg, transparent 35px, #0071aa 0) top right, linear-gradient(-45deg, transparent 35px, #0071aa 0) bottom right; background-size: 100% 50%; background-repeat: no-repeat; color: #002b2c; line-height: 30px; font-weight: bold;",
-    "#vscodevim\\.vim\\.primary[aria-label^=\"-- NORMAL --  MULTI CURSOR\"]": "width: 250px; background: linear-gradient(-135deg, transparent 35px, #0071aa 0) top right, linear-gradient(-45deg, transparent 35px, #0071aa 0) bottom right; background-size: 100% 50%; background-repeat: no-repeat; color: #002b2c; line-height: 30px; font-weight: bold;",
-    // INSERT MODE
-    "#vscodevim\\.vim\\.primary[aria-label^=\"-- INSERT --\"]": "width: 145px; background: linear-gradient(-135deg, transparent 35px, #849a28 0) top right, linear-gradient(-45deg, transparent 35px, #849a28 0) bottom right; background-size: 100% 50%; background-repeat: no-repeat; color: #002b2c; line-height: 30px; font-weight: bold;",
-    "#vscodevim\\.vim\\.primary[aria-label^=\"-- INSERT --  MULTI CURSOR\"]": "width: 250px; background: linear-gradient(-135deg, transparent 35px, #849a28 0) top right, linear-gradient( -45deg, transparent 35px, #849a28 0) bottom right; background-size:  100% 50%; background-repeat: no-repeat; color: #002b2c; line-height: 30px;  font-weight: bold;",
-    // VISUAL MODE
-    "#vscodevim\\.vim\\.primary[aria-label^=\"-- VISUAL --\"]": "width: 145px; background: linear-gradient(-135deg, transparent 35px, #a73d71 0) top right, linear-gradient(-45deg, transparent 35px, #a73d71 0) bottom right; background-size: 100% 50%; background-repeat: no-repeat; color: #002b2c; line-height: 30px; font-weight: bold;",
-    "#vscodevim\\.vim\\.primary[aria-label^=\"-- VISUAL LINE\"]": "width: 170px; background: linear-gradient(-135deg, transparent 35px, #a73d71 0) top right, linear-gradient( -45deg, transparent 35px, #a73d71 0) bottom right; background-size:  100% 50%; background-repeat: no-repeat; color: #002b2c; line-height: 30px;  font-weight: bold;",
-    "#vscodevim\\.vim\\.primary[aria-label^=\"-- VISUAL BLOCK\"]": "width: 180px; background: linear-gradient(-135deg, transparent 35px, #a73d71 0) top right, linear-gradient( -45deg, transparent 35px, #a73d71 0) bottom right; background-size:  100% 50%; background-repeat: no-repeat; color: #002b2c; line-height: 30px;  font-weight: bold;",
-    // REPLACE
-    "#vscodevim\\.vim\\.primary[aria-label^=\"-- REPLACE --\"]": "width: 145px; background: linear-gradient(-135deg, transparent 35px, #fd7e00 0) top right, linear-gradient(-45deg, transparent 35px, #fd7e00 0) bottom right; background-size: 100% 50%; background-repeat: no-repeat; color: #002b2c; line-height: 30px; font-weight: bold;",
-
-    // git status
-    "#status\\.scm\\.0.statusbar-item.left": "background-color: #75807d !important; color: #053038 !important"
-  },
-  // "customizeUI.titleBar": "inline", // macOS のみ
-
-  "workbench.colorCustomizations": {
-    "[Solarized Dark]": {
-      "editorCursor.foreground": "#0088F4"
-    }
-  },
-
-  /** vim関連設定 */
-  //* insertモードのキーバインド
+  //* INSERT
   "vim.insertModeKeyBindingsNonRecursive": [
     { "before": ["j", "j"], "after": ["<Esc>"] },
     { "before": ["っ", "ｊ"], "after": ["<Esc>"] }
   ],
-
-  //* normalモードのキーバインド
+  //* NORMAL
   "vim.normalModeKeyBindingsNonRecursive": [
-    /*- Vim 操作系 -*/
-
-    /* Leader以外 */
-    // 標準で表示行で移動
+    // 表示行で移動
     { "before": ["j"], "after": ["g", "j"] },
     { "before": ["k"], "after": ["g", "k"] },
-    // g+で論理行で移動
-    { "before": ["g", "j"], "after": ["j"] },
-    { "before": ["g", "k"], "after": ["k"] },
+    // 大文字JKで10行ずつ移動する
+    { "before": ["K"], "after": ["1", "0", "k"] },
+    { "before": ["J"], "after": ["1", "0", "j"] },
     // 検索ハイライト解除
     { "before": ["<C-n>"], "commands": [":nohl"] },
-    // uのundoでVSCodeのものを使用
+    // undo redo でvscodeのものを使用
     { "before": ["u"], "commands": ["undo"] },
-    // ctrl+rのredoでVSCodeのものを使用
     { "before": ["<C-r>"], "commands": ["redo"] },
-    // dで削除時にyankされないようにする
+    // dで削除時にクリップボードに保存されないようにする
     { "before": ["d"], "after": ["\"", "_", "d"] },
     { "before": ["D"], "after": ["\"", "_", "D"] },
     { "before": ["d", "d"], "after": ["\"", "_", "d", "d"] },
     // カーソル行の移動
     { "before": ["<C-j>"], "commands": ["editor.action.moveLinesDownAction"] },
     { "before": ["<C-k>"], "commands": ["editor.action.moveLinesUpAction"] },
-    // ファイル内のエラー箇所に移動
-    { "before": ["<C-e>"], "commands": ["editor.action.marker.nextInFiles"] },
-    { "before": ["<C-e>"], "commands": ["editor.action.marker.prevInFiles"] },
-    // Enterでノーマルモードのまま改行されるようにする
-    { "before": ["<Enter>"], "after": ["o", "<Esc>"] },
-    // 大文字JKで10行ずつ移動する
-    { "before": ["K"], "after": ["1", "0", "k"] },
-    { "before": ["J"], "after": ["1", "0", "j"] },
-
-    /* Leader */
+    // 行の最後に移動
+    { "before": ["L"], "after": ["$"] },
+    // 行の開始に移動
+    { "before": ["H"], "after": ["^"] },
+    // ;でコマンドモードへ
+    { "before": [";"], "after": [":"] },
+    // 閉じる
+    { "before": ["<leader>", "q"], "after": [":q"] },
     // 全選択
     { "before": ["<leader>", "a"], "after": ["g", "g", "V", "G"] },
-    // 行の最後にノーマルモードのまま移動
-    { "before": ["<leader>", "l"], "after": ["$"] },
-    // 行の開始にノーマルモードのまま移動
-    { "before": ["<leader>", "h"], "after": ["^"] },
-
-    /*- VSCode 操作系-*/
     // 定義に移動
     {
       "before": ["<leader>", "]"],
@@ -88,7 +47,7 @@
     // 参照に移動
     {
       "before": ["<leader>", "\\"],
-      "commands": ["editor.action.goToTypeDefinition"]
+      "commands": ["editor.action.goToReferences"]
     },
     // ブックマークのトグル
     { "before": ["<leader>", "b"], "commands": ["Bookmarks.toggle"] },
@@ -97,57 +56,35 @@
       "before": ["<leader>", "g", "h"],
       "commands": ["editor.action.showDefinitionPreviewHover"]
     },
-    // 一つ戻る
-    {
-      "before": ["<leader>", "-"],
-      "commands": ["workbench.action.navigateBack"]
-    },
-    // 一つ進む
-    {
-      "before": ["<leader>", "="],
-      "commands": ["workbench.action.navigateForward"]
-    },
     // クイックフィックス
     { "before": ["<leader>", "."], "commands": ["editor.action.quickFix"] },
     // コメントアウト トグル
-    { "before": ["<leader>", "/"], "commands": ["editor.action.commentLine"] },
-    // 標準pasteを使用
-    {
-      "before": ["<leader>", "v"],
-      "commands": ["editor.action.clipboardPasteAction"]
-    },
-    // レジスタ一覧表示
-    {
-      "before": ["<leader>", "r"],
-      "commands": [":reg"]
-    }
+    { "before": ["<leader>", "/"], "commands": ["editor.action.commentLine"] }
   ],
-
-  //* visualモードのキーバインド
+  //* VISUAL
   "vim.visualModeKeyBindingsNonRecursive": [
-    // マルチカーソル
-    { "before": ["<C-n>"], "after": ["g", "b"] },
-    // カーソル行の移動
-    // dで削除時にyankされないようにする
-    { "before": ["d"], "after": ["\"", "_", "d"] },
-    { "before": ["<C-j>"], "commands": ["editor.action.moveLinesDownAction"] },
-    { "before": ["<C-k>"], "commands": ["editor.action.moveLinesUpAction"] },
     // JKで10行ずつ移動する
     { "before": ["J"], "after": ["1", "0", "j"] },
     { "before": ["K"], "after": ["1", "0", "k"] },
-
-    /* Leader */
     // 行の最後まで選択
-    { "before": ["<leader>", "l"], "after": ["%"] },
+    { "before": ["L"], "after": ["$"] },
     // 行の開始まで選択
-    { "before": ["<leader>", "h"], "after": ["^"] },
+    { "before": ["H"], "after": ["^"] },
+    // dで削除時にyankされないようにする
+    { "before": ["d"], "after": ["\"", "_", "d"] },
+    // カーソル行の移動
+    { "before": ["<C-j>"], "commands": ["editor.action.moveLinesDownAction"] },
+    { "before": ["<C-k>"], "commands": ["editor.action.moveLinesUpAction"] },
+    // マルチカーソル
+    { "before": ["<C-n>"], "after": ["g", "b"] },
     // コメントアウトトグル
-    { "before": ["<leader>", "/"], "commands": ["editor.action.commentLine"] },
-    // Escape
-    { "before": ["<leader>", "<leader>"], "after": ["<Esc>"] }
+    { "before": ["<leader>", "/"], "commands": ["editor.action.commentLine"] }
   ],
-
-  //* その他 */
+  //* COMMAND
+  "vim.commandLineModeKeyBindingsNonRecursive": [
+    { "before": ["<CR>"], "after": ["<CR>", "z", "z"] }
+  ],
+  //* OTHERS
   // easy motion 有効
   "vim.easymotion": true,
   // 検索結果 ハイライト
@@ -161,7 +98,7 @@
   // 文字選択したものを * で検索をかけられるようにする
   "vim.visualstar": true,
 
-  /* フォーマッター */
+  /* フォーマッタ */
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -176,6 +113,14 @@
   },
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[lua]": {
+    "editor.defaultFormatter": "Koihik.vscode-lua-format"
+  },
+  "workbench.colorCustomizations": {
+    "[Solarized Dark+]": {
+      "editor.selectionBackground": "#165e70"
+    }
   },
 
   /* ワークベンチ */
@@ -199,6 +144,8 @@
   "editor.copyWithSyntaxHighlighting": true,
   // ミニマップを非表示
   "editor.minimap.enabled": false,
+  // カーソルを移動した際にN行以上、上下にスクロールされないようにする
+  "editor.cursorSurroundingLines": 10,
 
   /* その他 */
   // 言語を日本語にしてエメットを生成
@@ -207,9 +154,26 @@
   },
   // VSCodeの音量
   "audioCues.volume": 0,
+  // Prettier 設定
   "prettier.singleQuote": true,
+  // フォルダ階層を省略しない
   "explorer.compactFolders": false,
   "markdown-preview-enhanced.previewTheme": "solarized-dark.css",
   "markdown.preview.breaks": true,
-  "workbench.colorTheme": "Solarized Dark"
+  "[markdown]": {
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+  },
+  "extensions.ignoreRecommendations": true,
+  "Lua.telemetry.enable": true,
+  // "editor.fontFamily": "monaco",
+  "vsicons.presets.hideExplorerArrows": true,
+  "workbench.layoutControl.enabled": false,
+  "workbench.activityBar.visible": false,
+  "breadcrumbs.enabled": false,
+  "workbench.startupEditor": "none",
+  "window.zoomLevel": 0.5,
+  "[less]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "workbench.colorTheme": "Solarized Dark+"
 }

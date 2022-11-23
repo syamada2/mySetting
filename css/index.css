@@ -1,0 +1,30 @@
+.sidebar .explorer-viewlet .label-name,
+.editor .title .label-name {
+  font-family: "Monaco";
+  font-size: 12px;
+}
+
+.monaco-icon-label-container .monaco-icon-name-container .label-name {
+  font-size: 12px;
+}
+
+/* NORMAL */
+a.disabled[aria-label^="-- NORMAL"] {
+  font-size: 0px;
+  margin: 0;
+  padding: 0;
+}
+
+
+a.disabled[aria-label^="-- NORMAL"]::before {
+  content: "NORMAL";
+  width: 70px;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0px;
+  padding: 0 5px 0 7px;
+  color: #2c2e34;
+}

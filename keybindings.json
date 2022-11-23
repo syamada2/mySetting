@@ -5,11 +5,6 @@
     "key": "ctrl+s",
     "command": "workbench.action.files.save"
   },
-  // タブを閉じる
-  {
-    "key": "ctrl+w",
-    "command": "workbench.action.closeActiveEditor"
-  },
   // tabでサジェストを上下
   {
     "key": "tab",
@@ -86,13 +81,22 @@
     "when": "editorTextFocus && editorLangId == 'markdown'"
   },
 
-  //! Removed key
   {
-    "key": "ctrl+w",
-    "command": "-workbench.action.switchWindow"
+    "key": "cmd+p",
+    "command": "projectManager.listProjects"
   },
   {
-    "key": "cmd+w",
-    "command": "-workbench.action.closeActiveEditor"
+    "key": "alt+j",
+    "command": "editor.action.insertCursorBelow",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+k",
+    "command": "editor.action.insertCursorAbove",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+escape",
+    "command": "workbench.action.closeSidebar"
   }
 ]
