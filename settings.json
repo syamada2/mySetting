@@ -120,6 +120,111 @@
   "workbench.colorCustomizations": {
     "[Solarized Dark+]": {
       "editor.selectionBackground": "#165e70"
+    },
+    "[Solarized Dark]": {}
+  },
+  "editor.tokenColorCustomizations": {
+    "[Solarized Dark]": {
+      "textMateRules": [
+        // RED
+        {
+          "scope": [
+            // 基本色
+            "meta",
+            // クラス名
+            "support.class",
+            // タイプとの間のコロン
+            "keyword.operator.type.annotation",
+            // セミコロン
+            "punctuation.terminator.statement",
+            // `${}`
+            "punctuation.definition.template-expression.begin",
+            "punctuation.definition.template-expression.end"
+          ],
+          "settings": {
+            "foreground": "#d34848"
+          }
+        },
+        // CYAN
+        {
+          "scope": [
+            // string
+            "string",
+            // number
+            "constant.numeric",
+            // boolean
+            "constant.language.boolean",
+            "constant.language"
+          ],
+          "settings": {
+            "foreground": "#2AA198"
+          }
+        },
+        // GRAY
+        {
+          "scope": [
+            // コメント
+            "comment"
+          ],
+          "settings": {
+            "foreground": "#718a92",
+            "fontStyle": "italic"
+          }
+        },
+        // LIGHT GREEN
+        {
+          "scope": [
+            // const let 等
+            "storage.type",
+            // for if return 等
+            "keyword.control",
+            // + = 等
+            "keyword.operator",
+            "support.type.property-name"
+          ],
+          "settings": {
+            "foreground": "#a1db2d",
+            "fontStyle": ""
+          }
+        },
+        // WHITE
+        {
+          "scope": [
+            // 変数名
+            "variable",
+            "variable.parameter",
+            "variable.other.constant",
+            // markdown パラグラフ
+            "meta.paragraph"
+          ],
+          "settings": {
+            "foreground": "#c2c2c2"
+          }
+        },
+        // BLUE
+        {
+          "scope": [
+            "entity.name.function"
+            // "support.variable.property"
+          ],
+          "settings": {
+            "foreground": "#2c8ecb",
+            "fontStyle": ""
+          }
+        },
+        // ORANGE
+        {
+          "scope": [
+            // import
+            "keyword.control.import",
+            // from
+            "keyword.control.from"
+          ],
+          "settings": {
+            "foreground": "#d35d48"
+          }
+        }
+      ]
     }
   },
 
@@ -137,7 +242,8 @@
   // タブのサイズ
   "editor.tabSize": 2,
   // カッコが色分けされるようにする
-  "editor.guides.bracketPairs": true,
+  "editor.guides.bracketPairs": false,
+  "editor.bracketPairColorization.enabled": false,
   // 今いる階層を上部に表示する
   "editor.stickyScroll.enabled": true,
   // ハイライトを一緒にコピーする
@@ -175,5 +281,5 @@
   "[less]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "workbench.colorTheme": "Solarized Dark+"
+  "workbench.colorTheme": "Solarized Dark"
 }
