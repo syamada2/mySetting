@@ -1,6 +1,6 @@
 .sidebar .explorer-viewlet .label-name,
 .editor .title .label-name {
-  font-family: "Monaco";
+  font-family: 'Monaco';
   font-size: 12px;
 }
 
@@ -8,23 +8,177 @@
   font-size: 12px;
 }
 
-/* NORMAL */
-a.disabled[aria-label^="-- NORMAL"] {
-  font-size: 0px;
+/** Status Bar */
+/* General */
+.monaco-workbench
+  .part.statusbar
+  > .items-container
+  > .statusbar-item.left.first-visible-item {
+  padding-left: 0;
+}
+.monaco-workbench
+  .part.statusbar
+  > .items-container
+  > .statusbar-item
+  > :first-child {
   margin: 0;
   padding: 0;
 }
 
+/*? Vim Mode */
 
-a.disabled[aria-label^="-- NORMAL"]::before {
-  content: "NORMAL";
+/* NORMAL */
+a.disabled[aria-label^='-- NORMAL'] {
+  font-size: 0;
+  margin: 0;
+  padding: 0;
+}
+a.disabled[aria-label^='-- NORMAL']::before {
+  content: 'NORMAL';
   width: 70px;
   text-align: center;
   position: relative;
   display: inline-block;
   font-size: 12px;
   font-weight: bold;
-  margin: 0px;
-  padding: 0 5px 0 7px;
+  margin: 0;
+  padding: 0px 5px 0 7px;
   color: #2c2e34;
+  background-color: #4f9eec;
 }
+a.disabled[aria-label^='-- NORMAL']::after {
+  content: '';
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-left: 12px solid #4f9eec;
+}
+
+/* INSERT */
+a.disabled[aria-label^='-- INSERT'] {
+  font-size: 0;
+  margin: 0;
+  padding: 0;
+}
+a.disabled[aria-label^='-- INSERT']::before {
+  content: 'INSERT';
+  width: 70px;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0;
+  padding: 0px 5px 0 7px;
+  color: #2c2e34;
+  background-color: #c0e960;
+}
+a.disabled[aria-label^='-- INSERT']::after {
+  content: '';
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-left: 12px solid #c0e960;
+}
+
+/* VISUAL */
+a.disabled[aria-label^='-- VISUAL'] {
+  font-size: 0;
+  margin: 0;
+  padding: 0;
+}
+a.disabled[aria-label='-- VISUAL --']::before {
+  content: 'VISUAL';
+  width: 70px;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0;
+  /* padding: 0px 5px 0 7px; */
+  padding: 0;
+  color: #2c2e34;
+  background-color: #c274e1;
+}
+a.disabled[aria-label='-- VISUAL LINE --']::before {
+  content: 'VISUAL LINE';
+  width: 100px;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0;
+  /* padding: 0px 5px 0 7px; */
+  padding: 0;
+  color: #2c2e34;
+  background-color: #c274e1;
+}
+a.disabled[aria-label='-- VISUAL BLOCK --']::before {
+  content: 'VISUAL BLOCK';
+  width: 100px;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0;
+  /* padding: 0px 5px 0 7px; */
+  padding: 0;
+  color: #2c2e34;
+  background-color: #c274e1;
+}
+a.disabled[aria-label^='-- VISUAL']::after {
+  content: '';
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-left: 12px solid #c274e1;
+}
+
+/* REPLACE */
+a.disabled[aria-label^='-- REPLACE'] {
+  font-size: 0;
+  margin: 0;
+  padding: 0;
+}
+a.disabled[aria-label^='-- REPLACE']::before {
+  content: 'REPLACE';
+  width: 70px;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0;
+  /* padding: 0px 5px 0 7px; */
+  padding: 0;
+  color: #2c2e34;
+  background-color: #e9a757;
+}
+a.disabled[aria-label^='-- REPLACE']::after {
+  content: '';
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  border-left: 12px solid #e9a757;
+}
+.monaco-workbench
+  .part.statusbar
+  > .items-contaRner
+  > .statusbar-item
+  > a.disabled {
+  margin: 0;
+  padding: 0;
+}
+
+/* git branch*/
+.statusbar-item.left.first-visible-item a[aria-label$='...'] {
+  margin: 0;
+  padding: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #2c2e34;
+  background-color: #b3b3b3;
+}
+
+/* .codicon-paintcan:before {
+  display: none;
+} */

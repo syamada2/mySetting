@@ -1,0 +1,23 @@
+{
+  "recommendations": [
+    "vscodevim.vim",
+    "ush.bourbon",
+    "dbaeumer.vscode-eslint",
+    "mhutchie.git-graph",
+    "donjayamanne.githistory",
+    "eamodio.gitlens",
+    "visualstudioexptteam.vscodeintellicode",
+    "visualstudioexptteam.intellicode-api-usage-examples",
+    "ms-ceintl.vscode-language-pack-ja",
+    "yzhang.markdown-all-in-one",
+    "shd101wyy.markdown-preview-enhanced",
+    "ryuta46.multi-command",
+    "christian-kohler.npm-intellisense",
+    "christian-kohler.path-intellisense",
+    "esbenp.prettier-vscode",
+    "alefragnani.project-manager",
+    "humao.rest-client",
+    "gruntfuggly.todo-tree",
+    "vscode-icons-team.vscode-icons"
+  ]
+}

@@ -1,10 +1,11 @@
 {
-  //* INSERT
+  /* VIM */
+  // == INSERT ==
   "vim.insertModeKeyBindingsNonRecursive": [
     { "before": ["j", "j"], "after": ["<Esc>"] },
     { "before": ["っ", "ｊ"], "after": ["<Esc>"] }
   ],
-  //* NORMAL
+  // == NORMAL ==
   "vim.normalModeKeyBindingsNonRecursive": [
     // 表示行で移動
     { "before": ["j"], "after": ["g", "j"] },
@@ -31,7 +32,7 @@
     // ;でコマンドモードへ
     { "before": [";"], "after": [":"] },
     // 閉じる
-    { "before": ["<leader>", "q"], "after": [":q"] },
+    { "before": ["<leader>", "q"], "commands": [":q"] },
     // 全選択
     { "before": ["<leader>", "a"], "after": ["g", "g", "V", "G"] },
     // 定義に移動
@@ -61,7 +62,7 @@
     // コメントアウト トグル
     { "before": ["<leader>", "/"], "commands": ["editor.action.commentLine"] }
   ],
-  //* VISUAL
+  // == VISUAL ==
   "vim.visualModeKeyBindingsNonRecursive": [
     // JKで10行ずつ移動する
     { "before": ["J"], "after": ["1", "0", "j"] },
@@ -76,15 +77,13 @@
     { "before": ["<C-j>"], "commands": ["editor.action.moveLinesDownAction"] },
     { "before": ["<C-k>"], "commands": ["editor.action.moveLinesUpAction"] },
     // マルチカーソル
-    { "before": ["<C-n>"], "after": ["g", "b"] },
-    // コメントアウトトグル
-    { "before": ["<leader>", "/"], "commands": ["editor.action.commentLine"] }
+    { "before": ["<C-n>"], "after": ["g", "b"] }
   ],
-  //* COMMAND
+  // == COMMAND ==
   "vim.commandLineModeKeyBindingsNonRecursive": [
     { "before": ["<CR>"], "after": ["<CR>", "z", "z"] }
   ],
-  //* OTHERS
+  // == OTHERS ==
   // easy motion 有効
   "vim.easymotion": true,
   // 検索結果 ハイライト
@@ -98,7 +97,7 @@
   // 文字選択したものを * で検索をかけられるようにする
   "vim.visualstar": true,
 
-  /* フォーマッタ */
+  /* フォーマッター */
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -117,132 +116,39 @@
   "[lua]": {
     "editor.defaultFormatter": "Koihik.vscode-lua-format"
   },
-  "workbench.colorCustomizations": {
-    "[Solarized Dark+]": {
-      "editor.selectionBackground": "#165e70"
-    },
-    "[Solarized Dark]": {}
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "editor.tokenColorCustomizations": {
-    "[Solarized Dark]": {
-      "textMateRules": [
-        // RED
-        {
-          "scope": [
-            // 基本色
-            "meta",
-            // クラス名
-            "support.class",
-            // タイプとの間のコロン
-            "keyword.operator.type.annotation",
-            // セミコロン
-            "punctuation.terminator.statement",
-            // `${}`
-            "punctuation.definition.template-expression.begin",
-            "punctuation.definition.template-expression.end"
-          ],
-          "settings": {
-            "foreground": "#d34848"
-          }
-        },
-        // CYAN
-        {
-          "scope": [
-            // string
-            "string",
-            // number
-            "constant.numeric",
-            // boolean
-            "constant.language.boolean",
-            "constant.language"
-          ],
-          "settings": {
-            "foreground": "#2AA198"
-          }
-        },
-        // GRAY
-        {
-          "scope": [
-            // コメント
-            "comment"
-          ],
-          "settings": {
-            "foreground": "#718a92",
-            "fontStyle": "italic"
-          }
-        },
-        // LIGHT GREEN
-        {
-          "scope": [
-            // const let 等
-            "storage.type",
-            // for if return 等
-            "keyword.control",
-            // + = 等
-            "keyword.operator",
-            "support.type.property-name"
-          ],
-          "settings": {
-            "foreground": "#a1db2d",
-            "fontStyle": ""
-          }
-        },
-        // WHITE
-        {
-          "scope": [
-            // 変数名
-            "variable",
-            "variable.parameter",
-            "variable.other.constant",
-            // markdown パラグラフ
-            "meta.paragraph"
-          ],
-          "settings": {
-            "foreground": "#c2c2c2"
-          }
-        },
-        // BLUE
-        {
-          "scope": [
-            "entity.name.function"
-            // "support.variable.property"
-          ],
-          "settings": {
-            "foreground": "#2c8ecb",
-            "fontStyle": ""
-          }
-        },
-        // ORANGE
-        {
-          "scope": [
-            // import
-            "keyword.control.import",
-            // from
-            "keyword.control.from"
-          ],
-          "settings": {
-            "foreground": "#d35d48"
-          }
-        }
-      ]
-    }
+  "[markdown]": {
+    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+  },
+  "[less]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
+  /* ウィンドウ */
+  "window.zoomLevel": 0.5,
+
   /* ワークベンチ */
+  // カラーテーマ
+  "workbench.colorTheme": "Bourbon",
   // アイコンテーマ
   "workbench.iconTheme": "vscode-icons",
-  // インデントガイド
-  "workbench.tree.renderIndentGuides": "always",
-  // explorerのツリーインデント
-  "workbench.tree.indent": 8,
+  // レイアウトコントロール表示
+  "workbench.layoutControl.enabled": false,
+  // アクティビティーバー表示
+  // "workbench.activityBar.visible": false,
+  // vscodeスタート画面の表示
+  "workbench.startupEditor": "none",
 
   /* エディター */
   // 保存時にフォーマット
   "editor.formatOnSave": true,
   // タブのサイズ
   "editor.tabSize": 2,
-  // カッコが色分けされるようにする
+  // カッコのガイド線が色付けされる
   "editor.guides.bracketPairs": false,
+  // カッコが色付けされる
   "editor.bracketPairColorization.enabled": false,
   // 今いる階層を上部に表示する
   "editor.stickyScroll.enabled": true,
@@ -252,6 +158,49 @@
   "editor.minimap.enabled": false,
   // カーソルを移動した際にN行以上、上下にスクロールされないようにする
   "editor.cursorSurroundingLines": 10,
+  // エディターのフォント
+  "editor.fontFamily": "monaco",
+  // フォルダ階層を上部に表示する
+  "breadcrumbs.enabled": false,
+
+  /* エクスプローラ */
+  // インデントガイド
+  "workbench.tree.renderIndentGuides": "always",
+  // explorerのツリーインデント
+  "workbench.tree.indent": 8,
+  // フォルダ階層を省略しない
+  "explorer.compactFolders": false,
+  // 階層矢印非表示
+  "vsicons.presets.hideExplorerArrows": true,
+
+  /* パネル */
+  // パネルの初期位置
+  "workbench.panel.defaultLocation": "right",
+
+  /* 言語ごとの設定 */
+  // Markdown
+  "markdown-preview-enhanced.previewTheme": "solarized-dark.css",
+  "markdown.preview.breaks": true,
+  // Lua
+  "Lua.telemetry.enable": true,
+
+  /* 拡張機能設定 */
+  // Prettier
+  "prettier.singleQuote": true,
+  // multi-command
+  "multiCommand.commands": [
+    {
+      "command": "Explorer.focusEditor.onOpen",
+      "sequence": [
+        "filesExplorer.openFilePreserveFocus",
+        "workbench.action.focusFirstEditorGroup"
+      ]
+    }
+  ],
+  // JS CSS
+  "vscode_custom_css.imports": [
+    "file:///Users/hira/Library/Application Support/Code/User/css/index.css"
+  ],
 
   /* その他 */
   // 言語を日本語にしてエメットを生成
@@ -260,26 +209,7 @@
   },
   // VSCodeの音量
   "audioCues.volume": 0,
-  // Prettier 設定
-  "prettier.singleQuote": true,
-  // フォルダ階層を省略しない
-  "explorer.compactFolders": false,
-  "markdown-preview-enhanced.previewTheme": "solarized-dark.css",
-  "markdown.preview.breaks": true,
-  "[markdown]": {
-    "editor.defaultFormatter": "yzhang.markdown-all-in-one"
-  },
-  "extensions.ignoreRecommendations": true,
-  "Lua.telemetry.enable": true,
-  // "editor.fontFamily": "monaco",
-  "vsicons.presets.hideExplorerArrows": true,
-  "workbench.layoutControl.enabled": false,
-  "workbench.activityBar.visible": false,
-  "breadcrumbs.enabled": false,
-  "workbench.startupEditor": "none",
-  "window.zoomLevel": 0.5,
-  "[less]": {
+  "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "workbench.colorTheme": "Solarized Dark"
+  }
 }

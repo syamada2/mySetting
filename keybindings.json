@@ -31,6 +31,16 @@
     "key": "ctrl+e",
     "command": "workbench.view.explorer"
   },
+  // 検索
+  {
+    "key": "ctrl+g",
+    "command": "workbench.action.findInFiles"
+  },
+  // サイドバーを閉じる
+  {
+    "key": "ctrl+Escape",
+    "command": "workbench.action.closeSidebar"
+  },
 
   //* Explorer
   // ファイル新規作成
@@ -51,10 +61,16 @@
     "command": "workbench.files.action.collapseExplorerFolders",
     "when": "filesExplorerFocus && !inputFocus"
   },
-  // エディターすべて閉じる
+  // リネーム
   {
-    "key": "`",
-    "command": "workbench.action.closeAllGroups",
+    "key": "r",
+    "command": "renameFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  // 開いてフォーカスする
+  {
+    "key": "Enter",
+    "command": "Explorer.focusEditor.onOpen",
     "when": "filesExplorerFocus && !inputFocus"
   },
 
@@ -72,8 +88,20 @@
     "key": "ctrl+3",
     "command": "workbench.action.focusThirdEditorGroup"
   },
+  // マルチカーソル
+  {
+    "key": "ctrl+shift+j",
+    "command": "editor.action.insertCursorBelow",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+k",
+    "command": "editor.action.insertCursorAbove",
+    "when": "editorTextFocus"
+  },
 
   //* Markdown
+  // 改行コードを挿入
   {
     "key": "shift+enter",
     "command": "type",
@@ -81,22 +109,30 @@
     "when": "editorTextFocus && editorLangId == 'markdown'"
   },
 
+  //* Ctrl+a Leader
+  // project manager 開く
   {
-    "key": "cmd+p",
+    "key": "ctrl+a p",
     "command": "projectManager.listProjects"
   },
+  // project manager 保存
   {
-    "key": "alt+j",
-    "command": "editor.action.insertCursorBelow",
-    "when": "editorTextFocus"
+    "key": "ctrl+a shift+p",
+    "command": "projectManager.saveProject"
   },
+  // パネルにフォーカス
   {
-    "key": "alt+k",
-    "command": "editor.action.insertCursorAbove",
-    "when": "editorTextFocus"
+    "key": "ctrl+a j",
+    "command": "workbench.action.focusPanel"
   },
+  // パネルを閉じる
   {
-    "key": "ctrl+escape",
-    "command": "workbench.action.closeSidebar"
+    "key": "ctrl+a shift+j",
+    "command": "workbench.action.closePanel"
+  },
+  // タブをすべて閉じる
+  {
+    "key": "ctrl+a backspace",
+    "command": "workbench.action.closeAllEditors"
   }
 ]
